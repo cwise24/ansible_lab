@@ -6,7 +6,7 @@ MAINTAINER Chad Wise <cwise24@gmail.com>
 COPY requirements.txt .
 RUN apk upgrade 
 RUN apk --update add --no-cache --virtual .pynacl_deps build-base g++ gcc libffi-dev libressl-dev musl-dev libxml2-dev libxslt-dev jpeg-dev zlib-dev
-RUN apk --update add openssl-dev python3 python3-dev py3-pip openssh git bash bash-completion vim jq && \
+RUN apk --update add openssl-dev python3 python3-dev py3-pip openssh git bash bash-completion vim jq curl wget && \
     echo "Installing Ansible and tools" && \
     pip3 install -r requirements.txt 
 
